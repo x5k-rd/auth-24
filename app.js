@@ -1,5 +1,11 @@
 // make variables available in all files
 require('dotenv').config()
+// console.log(process.env) //Remove after confirmed as working
+
+// Initialize databse
+require("./DB/database").connect()
+
+
 // Import Express
 const express = require('express')
 

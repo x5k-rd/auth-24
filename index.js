@@ -7,7 +7,7 @@ const app = require('./app')
 const {PORT} = process.env
 // Use Port variable and fire a callback, also listen to the port
 app.listen(PORT, () =>{
-    console.log ('Server is running at por: ${PORT}');
+    console.log ('Server is running at port: ${PORT}');
 })
 
 // Connect through MongoDB Atlas
