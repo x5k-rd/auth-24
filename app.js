@@ -1,3 +1,4 @@
+// make variables available in all files
 require('dotenv').config()
 // Import Express
 const express = require('express')

@@ -1,4 +1,4 @@
-// Listen to Express app
+// Listen to Express app from app.js
 
 // Import App
 const app = require('./app')
@@ -10,4 +10,5 @@ app.listen(PORT, () =>{
     console.log ('Server is running at por: ${PORT}');
 })
 
+// Connect through MongoDB Atlas
 
