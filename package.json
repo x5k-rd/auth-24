@@ -6,12 +6,19 @@
   "scripts": {
     "start": "index.js"
   },
-"repository": {
-"type": "git",
-"url": "git+https://github.com/x5k-rd/auth-24"
-},
-
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/x5k-rd/auth-24"
+  },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parse": "^0.4.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.9.1"
+  }
 }
