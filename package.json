@@ -1,0 +1,17 @@
+{
+  "name": "auth-24",
+  "version": "1.0.0",
+  "description": "A simple authentication page deployed via CodeSpace",
+  "main": "index.js",
+  "scripts": {
+    "start": "index.js"
+  },
+"repository": {
+"type": "git",
+"url": "git+https://github.com/x5k-rd/auth-24"
+},
+
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
