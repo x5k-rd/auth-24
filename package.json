@@ -4,7 +4,7 @@
   "description": "A simple authentication page deployed via CodeSpace",
   "main": "index.js",
   "scripts": {
-    "start": "index.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
