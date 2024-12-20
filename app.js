@@ -18,7 +18,7 @@ const jwt = require ('jsonwebtoken')
 // variable for secret string created via crypto builtin in nodejs and stored in secrets, used via process.env.jwtSecret
 const { jwtSecret } = process.env 
 
-// Call cookie-parser
+// Call cookie-parse
 const cookieParser = require('cookie-parser')
 
 
