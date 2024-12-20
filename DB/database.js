@@ -1,7 +1,7 @@
-// Call mongoose which was installed
+// Call mongoose which was installed in the beginning 
 const mongoose = require("mongoose")
 
-// grab DB Key from process.env & MONGODB_URL is the secret name 
+// grab DB Key from process.env & MONGODB_URL is the secret name within CodeSpace
 const { MONGODB_URL } = process.env 
 
 // Export to be used by other files

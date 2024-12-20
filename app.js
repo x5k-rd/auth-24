@@ -23,7 +23,7 @@ app.get("/", (req, res) => {
 })
 
 // DB operation
-app.post("/reguster", async (req, res) => {
+app.post("/register", async (req, res) => {
 try {
     // get all data from body
     // all the data should exist

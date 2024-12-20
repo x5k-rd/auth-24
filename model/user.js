@@ -13,10 +13,11 @@ const UserSchema = new mongoose.Schema({
     },
     email: {
         type: String,
-        unique: true
+        required: true
     },
     password: {
         type: String,
+        required: true
     },
     token: {
         type: String,
@@ -24,5 +25,5 @@ const UserSchema = new mongoose.Schema({
     }
 })
 
-// Export mongoose file, schema + name - singular for user - always
+// Export mongoose file, schema + name - always singular for user 
 module.exports = mongoose.model("user", UserSchema)
