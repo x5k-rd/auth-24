@@ -21,13 +21,15 @@ const { JWTSECRET } = process.env
 // Call cookie-parse
 const cookieParser = require('cookie-parser')
 
+const auth = require('./middleware/auth')
+
 // Create simple app - Express being used as a simple app
 const app = express()
 
 // Inject middleware to understand the json format, additional layer.
 app.use(express.json())
 
-// Inject middleware, inbetween, to understand & interact w them
+// Inject middleware, inbetween, to understand cookies & interact w them
 app.use(cookieParser())
 
 
@@ -141,6 +143,18 @@ try {
     res.status(401).send('User could not be authenticated')
     
 }
+})
+
+// require auth middleware for this route
+app.get("/Dashboard", auth, (req, res) => {
+    // Validate middleware was able to access this
+    console.log(req.user);
+    res.send('Dashboard page')
+})
+
+// logout route, delete the cookie and expire it and reditect
+app.get("/logout", (req, res) =>{
+    res.cookie("token", "", { expires: new Date(0), path: '/' }).end();
 })
 
 // export app to listen
