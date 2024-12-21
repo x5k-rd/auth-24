@@ -16,11 +16,10 @@ const bcrypt = require('bcryptjs')
 //Call jsonwebtoken and set it in a variable
 const jwt = require ('jsonwebtoken')
 // variable for secret string created via crypto builtin in nodejs and stored in secrets, used via process.env.jwtSecret
-const { jwtSecret } = process.env 
+const { JWTSECRET } = process.env 
 
 // Call cookie-parse
 const cookieParser = require('cookie-parser')
-
 
 // Create simple app - Express being used as a simple app
 const app = express()
@@ -76,7 +75,7 @@ try {
     // paylod called id (user_id comes from DB fields which are created automatically by mongoose)
     const token = jwt.sign(
         {id: user._id, email},
-        jwtSecret,
+        JWTSECRET,
         {
             expiresIn: "2h"
         }
@@ -140,6 +139,7 @@ try {
 
 } catch (error) {
     console.log(error);
+    res.status(401).send('User could not be authenticated')
     
 }
 }
