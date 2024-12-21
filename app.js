@@ -96,10 +96,10 @@ try {
 })
 
 // Login route which will do a request and response
-app.post('/login'), async (req, res) => {
+app.post("/login", async (req, res) => {
 try {
     // get all data from req.body / frontend
-    const {email, passwod} = req.body 
+    const {email, password} = req.body 
     // validation if both fields are there
     if (!(email && password)) {
         res.status(400).send('All required fields are missing input')
@@ -107,13 +107,12 @@ try {
     }
     // check with users in DB
     const user = await User.findOne({email})
-    //validation when user does not exist
 
     //check if user exists? and match password (encrypted in DB)
-    if (user && (await bcrypt.compare(passwod, user.password))) {
-        jwt.sign(
+    if (user && (await bcrypt.compare(password, user.password))) {
+        const token = jwt.sign(
             {id: user._id},
-            jwtSecret,
+            JWTSECRET,
             {
                 expiresIn: "2h"
             }
@@ -125,7 +124,7 @@ try {
         // send token in user cookie
     const options = {
         // Cookie expires in 1h
-        expires: new Date(Dat.now() + 3 * 24 * 60),
+        expires: new Date(Date.now() + 3 * 24 * 60),
         // cookies can only be edited by a server that processes the request
         httpOnly: true
     
@@ -142,7 +141,7 @@ try {
     res.status(401).send('User could not be authenticated')
     
 }
-}
+})
 
 // export app to listen
 module.exports = app
